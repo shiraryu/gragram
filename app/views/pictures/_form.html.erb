@@ -4,8 +4,8 @@
       <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
 
       <ul>
-        <% @picture.errors.full_message.each do |msg| %>
-          <li><%= msg %>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>

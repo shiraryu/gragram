@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
 gem 'jquery-turbolinks'
+gem 'devise'

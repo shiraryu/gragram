@@ -4,9 +4,9 @@
   <title>Gragram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>  <!-- 2.3.1のbootstrap使用 -->
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">     <!-- mobile対応(スマホ&タブレット) -->
 </head>
 <body>
 
@@ -16,7 +16,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header"style=width:100%;">
           <%= link_to "Gragram", root_path, class: "navbar-brand" %>
-          <div class = "container" id="header-container"style=width:100%;">
+          <div class = "header-container"style=width:100%;">
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown"style="max-width: 100px;float: right;">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">menu<span class="caret"></span></a>
