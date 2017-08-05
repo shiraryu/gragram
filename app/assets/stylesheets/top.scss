@@ -42,6 +42,7 @@ footer{
 .container{
   background-color: #fafafa;
   margin: 0;
+  padding-bottom: 85px;
   width: 100%;
   height: auto;
 }
@@ -95,8 +96,8 @@ footer{
     .dropdown{
     position:relative;z-index:2;
   }
-    a.dropdown-toggle{
-    padding-right: 0px;
+    a.dropdown-toggle{      /*menu*/
+    padding-right: 3px;
     font-size: 18px;
   }
 }
@@ -131,6 +132,7 @@ input[type="submit"].btn-block{   /*ボタン*/
 p#notice {                        /*noticeメッセージ装飾*/
     font-size:30px;
     color:black;
+    z-index: 2;
 }
 
 .page-top-btn {             /*トップに戻るボタンデザイン*/
@@ -158,4 +160,5 @@ p#notice {                        /*noticeメッセージ装飾*/
 .flash{                     /*Deviseのログイン後のフラッシュメッセージ*/
   color: black;
   padding-top: 10px;
+  z-index: 2;
 }

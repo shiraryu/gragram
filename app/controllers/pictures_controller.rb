@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :authenticate_user!        #ログイン有無のチェック
   before_action :set_picture,only:[:edit,:update,:destroy]
 
   def index
@@ -15,6 +16,7 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(pictures_params)
+    @picture.user_id = current_user.id       #contentと一緒にuser_idも保存されるようにする*/
       if @picture.save
         redirect_to pictures_path,notice:"投稿しました"
       else

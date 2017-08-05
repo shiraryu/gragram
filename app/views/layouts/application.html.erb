@@ -4,7 +4,6 @@
   <title>Gragram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>  <!-- 2.3.1のbootstrap使用 -->
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">     <!-- mobile対応(スマホ&タブレット) -->
 </head>
@@ -23,8 +22,13 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to "新規投稿", new_picture_path %></li>
                   <li><%= link_to "Picture", pictures_path %></li>
-                  <li><%= link_to "マイページ" %></li>
-                  <li><%= link_to "ログイン" %></li>
+                  <% if user_signed_in? %>
+                    <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+                    <li><%= link_to'ログアウト',destroy_user_session_path,method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to 'ログイン', new_user_session_path  %></li>
+                    <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+                  <% end %>
                 </ul>
               </li>
             </ul>
