@@ -16,9 +16,10 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(pictures_params)
-    @picture.user_id = current_user.id       #contentと一緒にuser_idも保存されるようにする*/
+    @picture.user_id = current_user.id      #contentと一緒にuser_idも保存されるようにする*/
       if @picture.save
         redirect_to pictures_path,notice:"投稿しました"
+        NoticeMailer.sendmail_picture(@picture).deliver      #Mailer呼び出し
       else
         render'new'
       end
