@@ -31,11 +31,10 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(pictures_params)
-      @picture.update(pictures_params)
+      redirect_to pictures_path,notice:"編集しました"
     else
       render'edit' and return
-    end
-    redirect_to pictures_path,notice:"編集しました"
+    end    
   end
 
   def destroy
