@@ -4,8 +4,21 @@
     <h3>Picture</h3>
     <% @pictures.each do |picture| %>
     <div class = "row">
+      <div class = "picture">
+      <%if picture.pictureimage? %>
+        <%= image_tag(picture.pictureimage) %>
+      <% else %>
+        <%= image_tag 'no_image(1).png' %>
+      <% end %>
+    </div>
+      <br>
+      <br>
+      <br>
       <p><%= picture.content %></p>
-      <p>投稿者：<%= picture.user.name %></p>
+      <br>
+      <div class = "contributor">
+        <p>投稿者：<%= picture.user.name %><span style="margin-right: 5px;"></span><%= profile_img(@user = picture.user) %></p>
+      </div>
       <br>
       <%= link_to "編集",edit_picture_path(picture.id),class:'btn btn-default btn-sm' %>
       <%= link_to "削除",picture_path(picture.id),method: :delete,data:{confirm:'本当に削除していいですか？'},class:'btn btn-default btn-sm' %>

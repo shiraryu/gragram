@@ -17,6 +17,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(pictures_params)
     @picture.user_id = current_user.id      #contentと一緒にuser_idも保存されるようにする*/
+    @picture.pictureimage.retrieve_from_cache! params[:cache][:pictureimage]
       if @picture.save
         redirect_to pictures_path,notice:"投稿しました"
         NoticeMailer.sendmail_picture(@picture).deliver      #Mailer呼び出し
@@ -49,7 +50,8 @@ class PicturesController < ApplicationController
 
   private
     def pictures_params
-      params.require(:picture).permit(:content)
+      # pictureimageを保存する時に、確認画面で一時的にキャッシュしたものを掘り出して値にセットし、保存
+      params.require(:picture).permit(:content,:pictureimage,:pictureimage_cache)
     end
     # idをキーとして取得するメソッド
     def set_picture

@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+  <div class= "field">
+    <%= f.label :photo %>      <!-- carrierwaveによる画像アップ -->
+    <br>
+    <br>
+    <%= f.file_field :pictureimage %>
+    <%= f.hidden_field :pictureimage_cache %>
+  </div>
+  <br>
+  <br>
   <%= f.label :content %><br />
   <br>
   <%= f.text_field :content,class:'form-control' %>
@@ -21,7 +30,8 @@
   <br>
   <br>
 <% end %>
-
+<br>
+<br>
 <%= link_to "一覧",pictures_path %>
 <br>
 <br>

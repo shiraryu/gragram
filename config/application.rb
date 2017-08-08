@@ -22,5 +22,8 @@ module Gragram
     config.i18n.default_locale = :ja
 
     config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
+
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
+    
   end
 end

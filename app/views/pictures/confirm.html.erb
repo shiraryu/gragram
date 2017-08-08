@@ -3,9 +3,13 @@
     <br>
     <h5 style = "text-decoration:underline">確認</h5>
     <%= form_for(@picture)do |f| %>
+      <%= hidden_field_tag :"cache[pictureimage]",@picture.pictureimage.cache_name %>
       <%= f.hidden_field :content %>
       <br>
-      <p>content<br /><br><%= @picture.content %></p>
+      <%= image_tag(@picture.pictureimage.url) %>
+      <br>
+      <br>
+      <p>content<br /><%= @picture.content %></p>
       <br>
       <%= f.submit "送信",class:'btn btn-default btn-sm' %>
       <br>

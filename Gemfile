@@ -59,6 +59,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -69,4 +70,12 @@ gem "font-awesome-rails"
 gem 'jquery-turbolinks'
 gem 'devise'
 gem 'faker'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production  # Heroku上のコンソールログ出力
+gem 'rails_admin'   # 管理者機能
+gem 'cancan'  # 管理画面アクセス制限
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'  # 画像をアップロード
+gem 'mini_magick'   # 画像サイズ変更

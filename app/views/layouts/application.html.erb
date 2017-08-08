@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">     <!-- mobile対応(スマホ&タブレット) -->
 </head>
 <body>
-
+  <% if current_user %>   <!-- ユーザーがログイン中のみヘッダー表示 -->
   <header>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -37,13 +37,16 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
+  <% end %>
 
   <%= yield %>
 
+  <% if current_user %>   <!-- ユーザーがログイン中のみフッター表示 -->
   <footer>
     <p>運営会社　Gragram株式会社</p>
     <p>© 2015-2016 Copyright Gragram Corp.</p>
   </footer>
+  <% end %>
 
 </body>
 </html>
