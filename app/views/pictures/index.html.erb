@@ -2,7 +2,7 @@
   <div class = "wrapper col-md-12 col-sm-10">
     <p id = "notice"><%= notice %></p>
     <h3>Picture</h3>
-    <% @pictures.each do |picture| %>
+    <% @pictures.reverse_each do |picture| %>    <!-- reverse_eachとすることで新規投稿が上に掲載されるようにする -->
     <div class = "row">
       <div class = "picture">
       <%if picture.pictureimage? %>
